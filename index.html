@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3f6f6">
-  <title>Pio-Bot | Asisten Digital ITPIO</title>
-  <meta name="description" content="Pio-Bot membantu ITPIO merapikan pekerjaan, mendukung kelas AI, dan mempercepat produksi website serta produk digital.">
-  <meta property="og:title" content="Pio-Bot — Asisten Digital ITPIO">
-  <meta property="og:description" content="Kenali asisten digital ITPIO untuk servis laptop, kelas AI, dan produk digital.">
+  <link rel="icon" type="image/png" sizes="512x512" href="piobot-icon.png">
+  <link rel="apple-touch-icon" href="piobot-icon.png">
+  <title>PioBot | Asisten Digital</title>
+  <meta name="description" content="PioBot membantu ITPIO merapikan pekerjaan, mendukung kelas AI, dan mempercepat produksi website serta produk digital.">
+  <meta property="og:title" content="PioBot — Asisten Digital">
+  <meta property="og:description" content="Kenali PioBot Asisten Digital untuk servis laptop, kelas AI, dan produk digital.">
   <meta property="og:image" content="https://itpio-assist.vercel.app/pio-bot-portrait.png">
   <meta property="og:image:type" content="image/png">
   <style>
@@ -59,9 +61,9 @@
       font-weight: 700;
       box-shadow: 0 5px 16px rgba(41, 79, 109, .08);
     }
-    .brand-mark { width: 43px; height: 43px; font-size: 25px; }
+    .brand-mark { display: block; width: 64px; height: 64px; border: 0; border-radius: 0; background: transparent; box-shadow: none; object-fit: contain; }
     .brand-copy { display: grid; line-height: 1.15; }
-    .brand-copy strong { font-size: .94rem; letter-spacing: .13em; }
+    .brand-copy strong { font-size: .94rem; letter-spacing: .03em; }
     .brand-copy small { margin-top: 4px; color: var(--muted); font-size: .7rem; letter-spacing: .03em; }
     .nav-links { display: flex; align-items: center; gap: 28px; color: var(--ink-soft); font-size: .9rem; }
     .nav-links a, .footer-links a { transition: color .18s ease; }
@@ -260,7 +262,7 @@
     .demo-section .section-heading { margin-inline: auto; text-align: center; }
     .chat-window { max-width: 790px; margin-inline: auto; overflow: hidden; }
     .chat-head { display: flex; align-items: center; gap: 11px; padding: 15px 20px; border-bottom: 1px solid var(--line); }
-    .chat-mark { width: 38px; height: 38px; border-radius: 13px; font-size: 21px; }
+    .chat-mark { display: block; width: 42px; height: 42px; border: 0; border-radius: 0; background: transparent; box-shadow: none; object-fit: contain; }
     .chat-title { display: grid; line-height: 1.3; }
     .chat-title strong { font-size: .91rem; }
     .chat-title small { color: var(--muted); font-size: .72rem; }
@@ -327,7 +329,7 @@
       .nav-row { gap: 12px; }
       .nav-links { display: none; }
       .nav-cta { padding: 9px 12px; font-size: .8rem; }
-      .brand-mark { width: 39px; height: 39px; border-radius: 13px; }
+      .brand-mark { width: 52px; height: 52px; }
       .hero { display: flex; flex-direction: column; align-items: stretch; gap: 0; min-height: unset; padding-top: 27px; padding-bottom: 30px; }
       .hero-copy { padding: 10px 0 4px; }
       .eyebrow { margin-bottom: 15px; font-size: .72rem; }
@@ -358,9 +360,9 @@
 <body>
   <header class="site-header">
     <div class="wrap nav-row">
-      <a class="brand" href="#" aria-label="Pio-Bot, beranda">
-        <span class="brand-mark" aria-hidden="true">P</span>
-        <span class="brand-copy"><strong>ITPIO</strong><small>Asisten digital</small></span>
+      <a class="brand" href="#" aria-label="PioBot, beranda">
+        <img class="brand-mark" src="itpio-logo.png" alt="ITPIO" aria-hidden="true" width="64" height="64">
+        <span class="brand-copy"><strong>PioBot</strong><small>Asisten Digital</small></span>
       </a>
       <nav class="nav-links" aria-label="Navigasi utama">
         <a href="#capabilities">Kemampuan</a>
@@ -374,9 +376,9 @@
   <main>
     <section class="wrap hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> Asisten digital ITPIO</p>
+        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> PioBot Asisten Digital</p>
         <h1 id="hero-title">Kerja lebih rapi.<br><em>Ide makin jalan.</em></h1>
-        <p class="hero-lede">Pio-Bot membantu menata pekerjaan harian, mendukung kelas AI, dan mempercepat produksi website serta produk digital—agar tim ITPIO punya lebih banyak waktu untuk pelanggan.</p>
+        <p class="hero-lede">PioBot membantu menata pekerjaan harian, mendukung kelas AI, dan mempercepat produksi website serta produk digital—agar tim ITPIO punya lebih banyak waktu untuk pelanggan.</p>
         <div class="button-row">
           <a class="btn primary" href="#demo">Lihat simulasi <span aria-hidden="true">↓</span></a>
           <a class="btn" href="#contact">Hubungi ITPIO <span aria-hidden="true">↗</span></a>
@@ -386,7 +388,7 @@
       <div class="hero-art">
         <picture>
           <source srcset="pio-bot-portrait.webp" type="image/webp">
-          <img class="mascot" src="pio-bot-portrait.png" alt="Maskot Pio-Bot ITPIO tersenyum dan mengulurkan tangan" fetchpriority="high" decoding="async">
+          <img class="mascot" src="pio-bot-portrait.png" alt="Maskot PioBot ITPIO tersenyum dan mengulurkan tangan" fetchpriority="high" decoding="async">
         </picture>
         <div class="mascot-note" aria-hidden="true">
           <span class="note-spark">✦</span>
@@ -399,11 +401,11 @@
       <div class="section-heading">
         <p class="section-kicker">Bekerja lebih ringan</p>
         <h2 id="problem-title">Dari banyak urusan jadi langkah yang jelas.</h2>
-        <p>Servis laptop, kelas AI, dan produk digital punya ritme masing-masing. Pio-Bot membantu menyatukan pekerjaan yang sering menyita waktu.</p>
+        <p>Servis laptop, kelas AI, dan produk digital punya ritme masing-masing. PioBot membantu menyatukan pekerjaan yang sering menyita waktu.</p>
       </div>
       <div class="compare-grid">
         <article class="panel pain">
-          <div class="panel-top"><span class="panel-mark" aria-hidden="true">~</span><h3>Sebelum Pio-Bot</h3></div>
+          <div class="panel-top"><span class="panel-mark" aria-hidden="true">~</span><h3>Sebelum PioBot</h3></div>
           <ul>
             <li>Catatan tersebar, pengingat terlewat, dan jadwal bertabrakan.</li>
             <li>Materi kelas AI perlu dibuat dan direvisi berulang kali.</li>
@@ -412,7 +414,7 @@
           </ul>
         </article>
         <article class="panel solution">
-          <div class="panel-top"><span class="panel-mark" aria-hidden="true">P</span><h3>Dengan Pio-Bot</h3></div>
+          <div class="panel-top"><span class="panel-mark" aria-hidden="true">P</span><h3>Dengan PioBot</h3></div>
           <ul>
             <li>Rangkum catatan, susun pengingat, dan rapikan agenda.</li>
             <li>Siapkan draf materi kelas AI untuk ditinjau dan dikembangkan.</li>
@@ -427,7 +429,7 @@
       <div class="section-heading">
         <p class="section-kicker">Yang bisa dibantu</p>
         <h2 id="capabilities-title">Satu asisten untuk kerja harian dan ide baru.</h2>
-        <p>Mulai dari tugas rutin sampai produksi digital, Pio-Bot mendukung alat yang sudah akrab dipakai tim.</p>
+        <p>Mulai dari tugas rutin sampai produksi digital, PioBot mendukung alat yang sudah akrab dipakai tim.</p>
       </div>
       <div class="feature-grid">
         <article class="feature-card">
@@ -461,13 +463,13 @@
       <div class="wrap">
         <div class="section-heading">
           <p class="section-kicker">Coba langsung</p>
-          <h2 id="demo-title">Lihat Pio-Bot membantu satu per satu.</h2>
+          <h2 id="demo-title">Lihat PioBot membantu satu per satu.</h2>
           <p>Pilih skenario untuk melihat contoh percakapan. Demo ini memakai data ilustrasi.</p>
         </div>
         <div class="chat-window">
           <div class="chat-head">
-            <span class="chat-mark" aria-hidden="true">P</span>
-            <span class="chat-title"><strong>Pio-Bot</strong><small>Asisten digital ITPIO</small></span>
+            <img class="chat-mark" src="piobot-icon.png" alt="" aria-hidden="true" width="42" height="42">
+            <span class="chat-title"><strong>PioBot</strong><small>Asisten Digital</small></span>
             <span class="chat-online"><span class="status-dot" aria-hidden="true"></span> Siap membantu</span>
           </div>
           <div class="messages" id="messages" role="log" aria-live="polite" aria-relevant="additions text"></div>
@@ -494,7 +496,7 @@
     </section>
   </main>
 
-  <footer>Pio-Bot · Asisten digital ITPIO</footer>
+  <footer>PioBot · PioBot Asisten Digital</footer>
 
   <script>
     const scenarios = [
@@ -548,7 +550,7 @@ Setelah isi dan visual ditinjau, website bisa disiapkan untuk deploy dan materi 
 
       const typing = document.createElement("div");
       typing.className = "bubble bot typing";
-      typing.setAttribute("aria-label", "Pio-Bot sedang menyiapkan jawaban");
+      typing.setAttribute("aria-label", "PioBot sedang menyiapkan jawaban");
       typing.innerHTML = "<span></span><span></span><span></span>";
       messages.appendChild(typing);
       messages.scrollTop = messages.scrollHeight;
@@ -572,7 +574,7 @@ Setelah isi dan visual ditinjau, website bisa disiapkan untuk deploy dan materi 
       scenarioList.appendChild(button);
     });
 
-    addBubble("bot", "Halo! Saya Pio-Bot. Pilih kebutuhan di bawah untuk melihat contoh bantuan yang bisa saya siapkan.");
+    addBubble("bot", "Halo! Saya PioBot. Pilih kebutuhan di bawah untuk melihat contoh bantuan yang bisa saya siapkan.");
   </script>
 </body>
 </html>
