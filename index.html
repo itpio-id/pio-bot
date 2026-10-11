@@ -61,7 +61,16 @@
       font-weight: 700;
       box-shadow: 0 5px 16px rgba(41, 79, 109, .08);
     }
-    .brand-mark { display: block; width: 64px; height: 64px; border: 0; border-radius: 0; background: transparent; box-shadow: none; object-fit: contain; }
+    .brand-mark {
+      display: block;
+      width: 64px;
+      height: 64px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      object-fit: contain;
+    }
     .brand-copy { display: grid; line-height: 1.15; }
     .brand-copy strong { font-size: .94rem; letter-spacing: .03em; }
     .brand-copy small { margin-top: 4px; color: var(--muted); font-size: .7rem; letter-spacing: .03em; }
@@ -262,7 +271,16 @@
     .demo-section .section-heading { margin-inline: auto; text-align: center; }
     .chat-window { max-width: 790px; margin-inline: auto; overflow: hidden; }
     .chat-head { display: flex; align-items: center; gap: 11px; padding: 15px 20px; border-bottom: 1px solid var(--line); }
-    .chat-mark { display: block; width: 42px; height: 42px; border: 0; border-radius: 0; background: transparent; box-shadow: none; object-fit: contain; }
+    .chat-mark {
+      display: block;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      object-fit: contain;
+    }
     .chat-title { display: grid; line-height: 1.3; }
     .chat-title strong { font-size: .91rem; }
     .chat-title small { color: var(--muted); font-size: .72rem; }
@@ -312,6 +330,26 @@
     .contact-box > p { max-width: 570px; margin: 0 auto 23px; color: rgba(255,255,255,.76); }
     .btn.light { border-color: #fff; background: #fff; color: var(--blue-deep); }
     .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px 22px; margin-top: 25px; color: rgba(255,255,255,.78); font-size: .84rem; }
+    .places-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--round); background: var(--paper); box-shadow: var(--shadow); }
+    .places-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+    .places-toolbar strong { color: var(--ink); font-size: .9rem; }
+    .places-meta { display: flex; align-items: center; gap: 16px; color: var(--muted); font-size: .8rem; }
+    .places-status { display: inline-flex; align-items: center; gap: 8px; }
+    .places-status .status-dot { width: 8px; height: 8px; background: var(--copper); box-shadow: none; }
+    .places-status[data-state="success"] .status-dot { background: var(--green); }
+    .places-status[data-state="error"] .status-dot { background: #b74e43; }
+    .places-table-scroll { overflow-x: auto; }
+    .places-table { width: 100%; min-width: 820px; border-collapse: collapse; text-align: left; }
+    .places-table th, .places-table td { padding: 14px 17px; border-bottom: 1px solid #e9eef0; vertical-align: middle; }
+    .places-table th { background: #f8fafb; color: var(--ink-soft); font-size: .72rem; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+    .places-table td { color: var(--ink-soft); font-size: .88rem; }
+    .places-table tbody tr:last-child td { border-bottom: 0; }
+    .places-table tbody tr:hover { background: #fbfcfc; }
+    .places-table td:first-child { color: var(--ink); font-weight: 650; }
+    .places-table td:nth-child(3), .places-table td:nth-child(4) { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .places-table td a { display: inline-flex; min-height: 34px; align-items: center; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--blue-deep); font-size: .78rem; font-weight: 700; text-decoration: none; transition: background .18s ease, border-color .18s ease; }
+    .places-table td a:hover { border-color: #b6c8d2; background: #edf3f6; }
+    .places-message { padding: 30px 18px; color: var(--muted) !important; text-align: center; }
     footer { padding: 22px 24px 32px; color: var(--muted); font-size: .8rem; text-align: center; }
     @keyframes bounce { 0%, 60%, 100% { transform: translateY(0); opacity: .48; } 30% { transform: translateY(-5px); opacity: 1; } }
     @keyframes rise { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
@@ -351,6 +389,9 @@
       .contact { padding-top: 35px; }
       .contact-box { padding: 40px 20px; border-radius: 23px; }
       .footer-links { gap: 9px 16px; }
+      .places-toolbar { align-items: flex-start; flex-direction: column; gap: 8px; padding: 15px; }
+      .places-meta { flex-wrap: wrap; gap: 8px 14px; }
+      .places-table th, .places-table td { padding: 13px 14px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -367,6 +408,7 @@
       <nav class="nav-links" aria-label="Navigasi utama">
         <a href="#capabilities">Kemampuan</a>
         <a href="#demo">Demo</a>
+        <a href="#places">Tempat</a>
         <a href="#contact">Tentang ITPIO</a>
       </nav>
       <a class="nav-cta" href="#contact">Hubungi tim <span aria-hidden="true">↗</span></a>
@@ -479,6 +521,37 @@
       </div>
     </section>
 
+    <section class="wrap section places-section" id="places" aria-labelledby="places-title">
+      <div class="section-heading">
+        <p class="section-kicker">Direktori tempat</p>
+        <h2 id="places-title">Temukan tempat pilihan Anda.</h2>
+        <p>Informasi tempat, rating, dan ulasan yang dimuat langsung dari direktori Supabase.</p>
+      </div>
+      <div class="places-card">
+        <div class="places-toolbar">
+          <strong>Tempat dengan ulasan terbanyak</strong>
+          <div class="places-meta">
+            <span class="places-status" id="places-status" data-state="loading" role="status" aria-live="polite">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span id="places-status-label">Menghubungkan ke Supabase…</span>
+            </span>
+            <span id="places-count" aria-live="polite">Memuat data…</span>
+          </div>
+        </div>
+        <div class="places-table-scroll">
+          <table class="places-table" id="places-table">
+            <thead>
+              <tr>
+                <th scope="col">Nama</th><th scope="col">Kategori</th><th scope="col">Rating</th>
+                <th scope="col">Review</th><th scope="col">Kota</th><th scope="col">Telepon</th><th scope="col">Maps</th>
+              </tr>
+            </thead>
+            <tbody><tr><td class="places-message" colspan="7">Memuat data…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <section class="wrap contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-box">
         <p class="section-kicker">Mari mulai percakapan</p>
@@ -503,23 +576,17 @@
       {
         label: "Atur jadwal",
         user: "Pio, jadwalkan meeting dengan klien hari Rabu jam 10 ya. Jangan sampai bentrok!",
-        bot: `Siap, saya cek Google Calendar dulu.
-
-Rabu pukul 10.00 bentrok dengan kelas AI. Ada waktu kosong pukul 13.00. Saya siapkan perubahan jadwal dan draf undangan untuk kamu tinjau.`
+        bot: `Siap, saya cek Google Calendar dulu.\n\nRabu pukul 10.00 bentrok dengan kelas AI. Ada waktu kosong pukul 13.00. Saya siapkan perubahan jadwal dan draf undangan untuk kamu tinjau.`
       },
       {
         label: "Nota & harga laptop",
         user: "Buatkan nota service laptop Pak Budi, sekalian riset harga pasar ASUS Vivobook bekas.",
-        bot: `Saya siapkan draf nota service untuk Pak Budi.
-
-Untuk harga Vivobook, kisarannya bergantung pada spesifikasi dan kondisi unit. Saya rangkum beberapa acuan harga dan tandai detail yang perlu dikonfirmasi sebelum penawaran dikirim.`
+        bot: `Saya siapkan draf nota service untuk Pak Budi.\n\nUntuk harga Vivobook, kisarannya bergantung pada spesifikasi dan kondisi unit. Saya rangkum beberapa acuan harga dan tandai detail yang perlu dikonfirmasi sebelum penawaran dikirim.`
       },
       {
         label: "Website & konten",
         user: "Buatkan landing page untuk klien baru, plus poster promonya.",
-        bot: `Saya mulai dari draf landing page dan konsep poster.
-
-Setelah isi dan visual ditinjau, website bisa disiapkan untuk deploy dan materi promonya dirapikan untuk publikasi.`
+        bot: `Saya mulai dari draf landing page dan konsep poster.\n\nSetelah isi dan visual ditinjau, website bisa disiapkan untuk deploy dan materi promonya dirapikan untuk publikasi.`
       }
     ];
 
@@ -575,6 +642,78 @@ Setelah isi dan visual ditinjau, website bisa disiapkan untuk deploy dan materi 
     });
 
     addBubble("bot", "Halo! Saya PioBot. Pilih kebutuhan di bawah untuk melihat contoh bantuan yang bisa saya siapkan.");
+
+    const SUPABASE_URL = 'https://lewddmqzjxtiljjwzwav.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_Oy_EBkZRhq4mDcqtVDjfDA_CrMKyn27';
+    const placesBody = document.querySelector('#places-table tbody');
+    const placesStatus = document.getElementById('places-status');
+    const placesStatusLabel = document.getElementById('places-status-label');
+    const placesCount = document.getElementById('places-count');
+
+    function showPlacesMessage(message) {
+      const row = document.createElement('tr');
+      const cell = document.createElement('td');
+      cell.className = 'places-message';
+      cell.colSpan = 7;
+      cell.textContent = message;
+      row.appendChild(cell);
+      placesBody.replaceChildren(row);
+    }
+
+    async function loadPlaces() {
+      try {
+        const endpoint = SUPABASE_URL + '/rest/v1/places?select=*&order=reviews_count.desc.nullslast&limit=100';
+        const response = await fetch(endpoint, { headers: { apikey: SUPABASE_KEY } });
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+
+        const rows = await response.json();
+        placesBody.replaceChildren();
+        placesStatus.dataset.state = 'success';
+        placesStatusLabel.textContent = 'Terhubung ke Supabase';
+        placesCount.textContent = rows.length + ' tempat';
+
+        for (const place of rows) {
+          const row = document.createElement('tr');
+          for (const value of [place.title, place.category_name, place.total_score, place.reviews_count, place.city, place.phone]) {
+            const cell = document.createElement('td');
+            cell.textContent = value ?? '–';
+            row.appendChild(cell);
+          }
+
+          const mapCell = document.createElement('td');
+          try {
+            const mapUrl = new URL(place.url);
+            if (mapUrl.protocol === 'https:') {
+              const link = document.createElement('a');
+              link.href = mapUrl.href;
+              link.target = '_blank';
+              link.rel = 'noopener noreferrer';
+              link.textContent = 'Buka peta';
+              mapCell.appendChild(link);
+            } else {
+              mapCell.textContent = '–';
+            }
+          } catch {
+            mapCell.textContent = '–';
+          }
+          row.appendChild(mapCell);
+          placesBody.appendChild(row);
+        }
+
+        if (!rows.length) {
+          showPlacesMessage('Belum ada data tempat untuk ditampilkan.');
+          placesCount.textContent = '0 tempat';
+        }
+      } catch (error) {
+        placesStatus.dataset.state = 'error';
+        placesStatusLabel.textContent = 'Gagal terhubung';
+        placesCount.textContent = 'Data tidak tersedia';
+        showPlacesMessage('Data gagal dimuat. Periksa koneksi atau pengaturan akses tabel places.');
+        console.error('Gagal memuat daftar tempat:', error);
+      }
+    }
+
+    loadPlaces();
   </script>
 </body>
 </html>
