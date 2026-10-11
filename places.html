@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f6f6">
+  <title>Direktori Tempat | ITPIO</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f3f6f6;
+      --paper: #fff;
+      --ink: #1b3045;
+      --ink-soft: #3b566d;
+      --muted: #687b89;
+      --blue: #294f6d;
+      --copper: #b97859;
+      --green: #568875;
+      --line: #dce5e8;
+      --round: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-width: 320px;
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 16px/1.55 "Segoe UI", system-ui, sans-serif;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--copper); outline-offset: 3px; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      display: flex;
+      min-height: 86px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand img { width: 46px; height: 46px; object-fit: contain; }
+    .brand-copy { display: grid; line-height: 1.2; }
+    .brand-copy strong { font-size: .9rem; letter-spacing: .06em; }
+    .brand-copy small { margin-top: 4px; color: var(--muted); font-size: .73rem; }
+    .connection { display: inline-flex; align-items: center; gap: 9px; color: var(--muted); font-size: .82rem; }
+    .status-dot { width: 8px; height: 8px; flex: 0 0 auto; border-radius: 50%; background: var(--copper); }
+    .connection[data-state="success"] .status-dot { background: var(--green); }
+    .connection[data-state="error"] .status-dot { background: #b74e43; }
+    main { padding-top: 63px; padding-bottom: 72px; }
+    .intro { max-width: 850px; margin-bottom: 31px; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: .76rem;
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 8px; height: 8px; border-radius: 50%; background: var(--copper); content: ""; }
+    h1 {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-size: clamp(2.45rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -.055em;
+      line-height: 1.08;
+    }
+    h1 span { color: var(--copper); }
+    .intro p:last-child { max-width: 650px; margin: 15px 0 0; color: var(--muted); }
+    .table-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--round); background: var(--paper); box-shadow: 0 18px 50px rgba(30, 57, 76, .07); }
+    .table-top { display: flex; min-height: 61px; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+    .table-caption { color: var(--ink); font-size: .9rem; font-weight: 700; }
+    #record-count { color: var(--muted); font-size: .8rem; font-variant-numeric: tabular-nums; }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; min-width: 820px; border-collapse: collapse; text-align: left; }
+    th, td { padding: 15px 17px; border-bottom: 1px solid #e9eef0; vertical-align: middle; }
+    th { background: #f8fafb; color: var(--ink-soft); font-size: .72rem; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+    td { color: var(--ink-soft); font-size: .88rem; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #fbfcfc; }
+    td:first-child { color: var(--ink); font-weight: 650; }
+    td:nth-child(3), td:nth-child(4) { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    td a { display: inline-flex; min-height: 34px; align-items: center; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--blue); font-size: .78rem; font-weight: 700; text-decoration: none; transition: background .18s ease, border-color .18s ease; }
+    td a:hover { border-color: #b6c8d2; background: #edf3f6; }
+    .message-cell { padding: 30px 18px; color: var(--muted); text-align: center; }
+    footer { padding: 0 24px 27px; color: var(--muted); font-size: .77rem; text-align: center; }
+    @media (max-width: 600px) {
+      .wrap { width: calc(100% - 32px); }
+      .site-header { min-height: 74px; }
+      .brand img { width: 40px; height: 40px; }
+      .connection { max-width: 145px; font-size: .72rem; }
+      main { padding-top: 45px; }
+      .table-top { padding-inline: 15px; }
+      th, td { padding: 13px 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="brand" href="/" aria-label="ITPIO, beranda">
+      <img src="itpio-logo.png" alt="" width="46" height="46">
+      <span class="brand-copy"><strong>ITPIO</strong><small>Direktori tempat</small></span>
+    </a>
+    <div class="connection" id="connection" data-state="loading" role="status" aria-live="polite">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span id="connection-label">Menghubungkan ke Supabase…</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Jelajahi sekitar</p>
+      <h1 id="page-title">Daftar tempat<span>.</span></h1>
+      <p>Informasi tempat, rating, dan ulasan yang dimuat langsung dari direktori Supabase.</p>
+    </section>
+
+    <section class="table-card" aria-label="Daftar tempat">
+      <div class="table-top">
+        <span class="table-caption">Tempat dengan ulasan terbanyak</span>
+        <span id="record-count" aria-live="polite">Memuat data…</span>
+      </div>
+      <div class="table-scroll">
+        <table id="places">
+          <thead>
+            <tr><th>Nama</th><th>Kategori</th><th>Rating</th><th>Review</th><th>Kota</th><th>Telepon</th><th>Maps</th></tr>
+          </thead>
+          <tbody><tr><td class="message-cell" colspan="7">Memuat data…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>ITPIO · Data direktori dimuat dari Supabase</footer>
+
+  <script>
+    const SUPABASE_URL = 'https://lewddmqzjxtiljjwzwav.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_Oy_EBkZRhq4mDcqtVDjfDA_CrMKyn27';
+
+    const tbody = document.querySelector('#places tbody');
+    const connection = document.querySelector('#connection');
+    const connectionLabel = document.querySelector('#connection-label');
+    const recordCount = document.querySelector('#record-count');
+
+    function showMessage(message) {
+      const row = document.createElement('tr');
+      const cell = document.createElement('td');
+      cell.className = 'message-cell';
+      cell.colSpan = 7;
+      cell.textContent = message;
+      row.appendChild(cell);
+      tbody.replaceChildren(row);
+    }
+
+    async function loadPlaces() {
+      try {
+        const url = SUPABASE_URL + '/rest/v1/places?select=*&order=reviews_count.desc.nullslast&limit=100';
+        const res = await fetch(url, { headers: { apikey: SUPABASE_KEY } });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+
+        const rows = await res.json();
+        tbody.replaceChildren();
+        connection.dataset.state = 'success';
+        connectionLabel.textContent = 'Terhubung ke Supabase';
+        recordCount.textContent = rows.length + ' tempat';
+
+        for (const place of rows) {
+          const row = document.createElement('tr');
+          for (const value of [place.title, place.category_name, place.total_score, place.reviews_count, place.city, place.phone]) {
+            const cell = document.createElement('td');
+            cell.textContent = value ?? '–';
+            row.appendChild(cell);
+          }
+
+          const mapCell = document.createElement('td');
+          try {
+            const mapUrl = new URL(place.url);
+            if (mapUrl.protocol === 'https:') {
+              const link = document.createElement('a');
+              link.href = mapUrl.href;
+              link.target = '_blank';
+              link.rel = 'noopener noreferrer';
+              link.textContent = 'Buka peta';
+              mapCell.appendChild(link);
+            } else {
+              mapCell.textContent = '–';
+            }
+          } catch {
+            mapCell.textContent = '–';
+          }
+          row.appendChild(mapCell);
+          tbody.appendChild(row);
+        }
+
+        if (!rows.length) {
+          showMessage('Belum ada data tempat untuk ditampilkan.');
+          recordCount.textContent = '0 tempat';
+        }
+      } catch (error) {
+        connection.dataset.state = 'error';
+        connectionLabel.textContent = 'Gagal terhubung';
+        recordCount.textContent = 'Data tidak tersedia';
+        showMessage('Data gagal dimuat. Periksa koneksi atau pengaturan akses tabel places.');
+        console.error(error);
+      }
+    }
+
+    loadPlaces();
+  </script>
+</body>
+</html>
